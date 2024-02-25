@@ -1,0 +1,128 @@
+*{
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+}
+body{
+  background-color: #eee;
+}
+nav{
+  width: 100%;
+  padding: 12px 0;
+  box-shadow: -3px -3px 7px #ffffff,
+              3px 3px 10px #ceced1;
+}
+nav .menu{
+  max-width: 1270px;
+  background-color: #010409;
+  padding: 0 20px;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+nav .logo a{
+  font-size: 26px;
+  font-weight: bold;
+  text-decoration: none;
+  color: antiquewhite;
+  transition-duration: .3s;
+}
+.menu ul{
+  list-style: none;
+  display: flex;
+  flex-wrap: nowrap;
+  padding-left: 0;
+  margin-bottom: 0;
+}
+.menu ul li{
+  padding: .5rem 1rem;
+}
+.menu ul a{
+  text-decoration: none;
+  transition: .3s ;
+  color: antiquewhite;
+  font-size: 18px;
+  font-weight: 500;
+  padding: 10px 12px;
+  display: inline-flex;
+  box-shadow: -3px -3px 7px #010409 ,
+              3px 3px 5px #ccc;
+}
+.menu a:hover{
+  background-color: #ffffff55;
+  color: #e80202;
+  border-radius: 8px;
+  padding: 10px;
+}
+nav label.button {
+  color:#31344b;
+  font-size: 25px;
+  cursor: pointer;
+  display: none;
+  background-color: transparent;
+  padding: 4px 10px;
+  border-radius: 6px;
+
+  border: 1px solid #30363d;
+  /* background-color: #30363d55; */
+}
+nav label.button:hover{
+  border-color: #8b949e;
+  
+}
+nav label.cancel{
+  position: absolute;
+  top: 25px;
+  right: 30px;
+}
+#check{
+  display: none;
+}
+@media (max-width:950px)
+{
+  .menu ul{
+    position: fixed;
+    top: 0;
+    left: -100%;
+    display: block;
+    width: 100%;
+    height: 100%;
+    max-width: 400px;
+    padding-top:50px ;
+    box-shadow: 0 5px 10px #b0b0b5;
+    background-color: #eee;
+    z-index: 1001;
+    transition: all .3s ease;
+  }
+
+  .menu ul a{
+    color: black;
+    display: block;
+    font-size: 20px;
+    width: 100%;
+    box-shadow: none;
+    text-align: center;
+    margin-top: 10px;
+  }
+  .menu ul a:hover{
+    background-color: #ffffff55;
+  transform: translate(10px,0);
+  -webkit-transform: translate(10px,0);
+    -moz-transform: translate(10px,0);
+    transform: scale(1.1);
+  }
+  nav label.show{
+    display: block;
+  }
+  #check:checked ~ label.show{
+    display: none;
+  }
+  #check:checked ~ ul label.cancel{
+    display: block;
+  }
+  #check:checked ~ ul{
+    left: 0;
+  }
+}
